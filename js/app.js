@@ -1,28 +1,79 @@
 // Devuelve la fecha actual en formato dd/mm/yyyy
 function obtenerFechaActual(){
-   
+  let fecha = new Date();
+  let dia = fecha.getDate();
+  let mes = fecha.getMonth() + 1;
+  let ano = fecha.getFullYear();
+
+  if(dia < 10){
+    dia = dia + '0';
+  }else{
+    dia;
+  }
+
+  if(mes < 10){
+    mes = mes + '0';
+  }else{
+    mes;
+  }
+
+  return `${dia}/${mes}/${ano}`;
   
 }
 
 // Calcula el área de un círculo a partir de su radio con dos decimales
 function calcularAreaCirculo(radio) {
- 
+  let area = 0;
+  area = Math.PI * Math.pow(radio, 2);
+  if(isNaN(radio)){
+    return null;
+  }
+  if(radio == 0){
+    area = 0;
+  }
+  if(radio < 0){
+    return null;
+  }
+  return Number(area.toFixed(2));
 }
 
 // Cuenta el número de vocales en una cadena de texto
 function contarVocales(cadena) {
- 
+  let count = 0;
+  let vocales = ['a', 'e', 'o', 'i', 'u', 'A', 'E', 'I', 'O', 'U', 'Á', 'É', 'Í', 'Ó', 'Ú', 'á', 'é', 'í', 'ó', 'ú'];
+  
+  if(typeof cadena !== 'string'){
+    count = -1;
+  }
+  for(let k = 0; k < cadena.length; k++){
+      if(vocales.includes(cadena[k])){
+        count++;
+      }else if(!isNaN(cadena[k]) && cadena[k] !== ' '){
+        count = -1;
+      }
+  }
+  return count;
 }
   
   
 // Convierte una temperatura de grados Celsius a Fahrenheit
 celsiusAFahrenheit = (celsius) => {
-  
+  let fahrenheit = 0;
+
+  fahrenheit = (celsius * 9/5) + 32;
+
+  if(isNaN(celsius)){
+    return null;
+  }
+
+  return Number(fahrenheit.toFixed(2));
 }
 
 // Crea una función que formatee un número agregando comas como separadores de miles.
 function formatearNumero(numero) {
+    
   
+  return numero 
 }
 
 

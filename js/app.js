@@ -71,18 +71,21 @@ celsiusAFahrenheit = (celsius) => {
 
 // Crea una función que formatee un número agregando comas como separadores de miles.
 function formatearNumero(numero) {
-  let numeroNuevo  ='';
-  let numeroString = numero.toString();
-  for(let k = numeroString.length-1; k >= 0; --k){
-    if(k % 3 ===  0 ){
-      numeroNuevo += '.';
-    }
-    numeroNuevo += numeroString[k];
-   console.log(numeroNuevo);
-  }
-
-  console.log(numeroNuevo);
   
+  let numeroString = numero.toString();
+  let contador = 0;
+  let numeroNuevo  ='';
+  for(let k = numeroString.length-1; k >= 0; --k){
+    numeroNuevo = numeroString[k] + numeroNuevo;
+    contador++;
+    if(contador % 3 === 0 && k !== 0){
+      numeroNuevo = '.' + numeroNuevo;
+    }
+    
+  }
+  if(isNaN(numero)){
+    return null;
+  }
   return numeroNuevo;
 }
 

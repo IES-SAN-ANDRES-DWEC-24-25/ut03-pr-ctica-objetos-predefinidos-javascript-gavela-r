@@ -71,16 +71,26 @@ celsiusAFahrenheit = (celsius) => {
 
 // Crea una función que formatee un número agregando comas como separadores de miles.
 function formatearNumero(numero) {
-    
+  let numeroNuevo  ='';
+  let numeroString = numero.toString();
+  for(let k = numeroString.length-1; k >= 0; --k){
+    if(k % 3 ===  0 ){
+      numeroNuevo += '.';
+    }
+    numeroNuevo += numeroString[k];
+   console.log(numeroNuevo);
+  }
+
+  console.log(numeroNuevo);
   
-  return numero 
+  return numeroNuevo;
 }
 
 
 // Función que recibe un string en formato dd/mm/yyyy y devuelve el número de días que faltan para el 6 de Enero del año siguiente
 function reyesMagos(fecha) {
  
-  }
+}
 
 
 // Ejercicio 10: Convertir a lowerCamelCase

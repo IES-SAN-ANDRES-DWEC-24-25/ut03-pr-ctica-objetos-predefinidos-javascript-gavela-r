@@ -72,22 +72,32 @@ celsiusAFahrenheit = (celsius) => {
 // Crea una función que formatee un número agregando comas como separadores de miles.
 function formatearNumero(numero) {
   
-  let numeroString = numero.toString();
+  let numeroArray = numero.toString().split('.');
+  let numeroString = numeroArray[0];
   let contador = 0;
-  let numeroNuevo  ='';
+  let numeroNuevo  = '';
+  let parteDecimal = numeroArray[1];
+  
+
   for(let k = numeroString.length-1; k >= 0; --k){
     numeroNuevo = numeroString[k] + numeroNuevo;
     contador++;
     if(contador % 3 === 0 && k !== 0){
       numeroNuevo = '.' + numeroNuevo;
-    }
-    
+    } 
   }
+
+  if(parteDecimal !== undefined){
+    numeroNuevo = numeroNuevo + ',' + parteDecimal; 
+  }
+  
+
   if(isNaN(numero)){
     return null;
   }
+
   return numeroNuevo;
-}
+} 
 
 
 // Función que recibe un string en formato dd/mm/yyyy y devuelve el número de días que faltan para el 6 de Enero del año siguiente

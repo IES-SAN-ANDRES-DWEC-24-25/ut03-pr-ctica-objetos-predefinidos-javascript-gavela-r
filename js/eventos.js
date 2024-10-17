@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('btnNumberToWords').addEventListener('click', () => {
         const cadena = document.getElementById('cadenaNumberToWords').value;
         const numero = numberToWords(+cadena);
-        console.log(numero);
+        // console.log(numero);
         document.getElementById('resultadoNumberToWords').innerText = `${numero}`;
     });
 
